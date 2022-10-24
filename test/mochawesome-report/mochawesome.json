@@ -5,9 +5,9 @@
     "passes": 1,
     "pending": 0,
     "failures": 0,
-    "start": "2022-10-24T16:22:20.046Z",
-    "end": "2022-10-24T16:22:24.939Z",
-    "duration": 4893,
+    "start": "2022-10-24T16:48:27.987Z",
+    "end": "2022-10-24T16:48:30.074Z",
+    "duration": 2087,
     "testsRegistered": 1,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "a4d9440d-b659-405c-abeb-10e6998d8b10",
+      "uuid": "7b30ec10-b313-4784-a9b2-6acabc7824ff",
       "title": "",
       "fullFile": "C:\\Users\\AdamTravers\\OneDrive - Lovehoney Group\\Desktop\\Dev\\selenium\\test\\test.js",
       "file": "\\test.js",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "2952ee32-731e-4b59-9540-7c50c0b09c1d",
+          "uuid": "88726d6d-2f3d-472d-8032-663c896653ae",
           "title": "add todo tests",
           "fullFile": "C:\\Users\\AdamTravers\\OneDrive - Lovehoney Group\\Desktop\\Dev\\selenium\\test\\test.js",
           "file": "\\test.js",
@@ -38,7 +38,7 @@
               "title": "succesfully adds a todo application",
               "fullTitle": "add todo tests succesfully adds a todo application",
               "timedOut": null,
-              "duration": 4159,
+              "duration": 1505,
               "state": "passed",
               "speed": "slow",
               "pass": true,
@@ -47,7 +47,7 @@
               "context": null,
               "code": "//launch browser\nlet driver = await new Builder().forBrowser(\"chrome\").build();\n//navigate to application\nawait driver.get(\"https://lambdatest.github.io/sample-todo-app/\");\n//https://stg-com.lh.uk/\n//edit page\nawait driver\n  .findElement(By.id(\"sampletodotext\"))\n  .sendKeys(\"kljflkd\", Key.RETURN);\n//assert\nlet todoText = await driver\n  .findElement(By.xpath(\"//li[last()]\"))\n  .getText()\n  .then(function (value) {\n    return value;\n  });\n//chai assertion should\ntodoText.should.equal(\"kljflkd\");\n//close browser\nawait driver.quit();",
               "err": {},
-              "uuid": "1972a826-dda1-40a2-84cb-8570cc862ca7",
+              "uuid": "5c582090-1584-420f-8420-f3e5e6c3ddfe",
               "parentUUID": null,
               "isHook": false,
               "skipped": false
@@ -55,12 +55,12 @@
           ],
           "suites": [],
           "passes": [
-            "1972a826-dda1-40a2-84cb-8570cc862ca7"
+            "5c582090-1584-420f-8420-f3e5e6c3ddfe"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 4159,
+          "duration": 1505,
           "root": false,
           "rootEmpty": false,
           "_timeout": null
