@@ -32,4 +32,64 @@ describe("add todo tests", function () {
     //close browser
     await driver.quit();
   });
+
+  it("succesfully adds a todo application", async function () {
+    //launch browser
+    let driver = await new Builder().forBrowser("chrome").build();
+
+    //navigate to application
+    await driver.get("https://lambdatest.github.io/sample-todo-app/");
+    //https://stg-com.lh.uk/
+
+    //edit page
+    await driver
+      .findElement(By.id("sampletodotext"))
+      .sendKeys("kljfkd", Key.RETURN);
+
+    //assert
+    let todoText = await driver
+      .findElement(By.xpath("//li[last()]"))
+      .getText()
+      .then(function (value) {
+        return value;
+      });
+
+    //chai assertion should
+    todoText.should.equal("kljfkd");
+
+    //close browser
+    await driver.quit();
+  });
+
+
+  
+  it("succesfully adds a todo application", async function () {
+    //launch browser
+    let driver = await new Builder().forBrowser("chrome").build();
+
+    //navigate to application
+    await driver.get("https://lambdatest.github.io/sample-todo-app/");
+    //https://stg-com.lh.uk/
+
+    //edit page
+    await driver
+      .findElement(By.id("sampletodotext"))
+      .sendKeys("shcdlkjsa", Key.RETURN);
+
+    //assert
+    let todoText = await driver
+      .findElement(By.xpath("//li[last()]"))
+      .getText()
+      .then(function (value) {
+        return value;
+      });
+
+    //chai assertion should
+    todoText.should.equal("shcdlkjsa");
+
+    //close browser
+    await driver.quit();
+  });
+
+
 });

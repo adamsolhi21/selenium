@@ -1,15 +1,15 @@
 {
   "stats": {
     "suites": 1,
-    "tests": 1,
-    "passes": 1,
+    "tests": 3,
+    "passes": 2,
     "pending": 0,
-    "failures": 0,
-    "start": "2022-10-24T16:48:27.987Z",
-    "end": "2022-10-24T16:48:30.074Z",
-    "duration": 2087,
-    "testsRegistered": 1,
-    "passPercent": 100,
+    "failures": 1,
+    "start": "2022-10-24T20:51:01.901Z",
+    "end": "2022-10-24T20:51:08.230Z",
+    "duration": 6329,
+    "testsRegistered": 3,
+    "passPercent": 66.66666666666666,
     "pendingPercent": 0,
     "other": 0,
     "hasOther": false,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "7b30ec10-b313-4784-a9b2-6acabc7824ff",
+      "uuid": "f01f8d6e-c7bf-4eaf-b047-9c9f7379a9ca",
       "title": "",
       "fullFile": "C:\\Users\\AdamTravers\\OneDrive - Lovehoney Group\\Desktop\\Dev\\selenium\\test\\test.js",
       "file": "\\test.js",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "88726d6d-2f3d-472d-8032-663c896653ae",
+          "uuid": "89d5fcc4-8c20-47eb-9281-83f7383676c3",
           "title": "add todo tests",
           "fullFile": "C:\\Users\\AdamTravers\\OneDrive - Lovehoney Group\\Desktop\\Dev\\selenium\\test\\test.js",
           "file": "\\test.js",
@@ -38,7 +38,7 @@
               "title": "succesfully adds a todo application",
               "fullTitle": "add todo tests succesfully adds a todo application",
               "timedOut": null,
-              "duration": 1505,
+              "duration": 2184,
               "state": "passed",
               "speed": "slow",
               "pass": true,
@@ -47,7 +47,47 @@
               "context": null,
               "code": "//launch browser\nlet driver = await new Builder().forBrowser(\"chrome\").build();\n//navigate to application\nawait driver.get(\"https://lambdatest.github.io/sample-todo-app/\");\n//https://stg-com.lh.uk/\n//edit page\nawait driver\n  .findElement(By.id(\"sampletodotext\"))\n  .sendKeys(\"kljflkd\", Key.RETURN);\n//assert\nlet todoText = await driver\n  .findElement(By.xpath(\"//li[last()]\"))\n  .getText()\n  .then(function (value) {\n    return value;\n  });\n//chai assertion should\ntodoText.should.equal(\"kljflkd\");\n//close browser\nawait driver.quit();",
               "err": {},
-              "uuid": "5c582090-1584-420f-8420-f3e5e6c3ddfe",
+              "uuid": "7c35a0d0-5a9b-49a3-b821-5a5f27973fa4",
+              "parentUUID": null,
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "succesfully adds a todo application",
+              "fullTitle": "add todo tests succesfully adds a todo application",
+              "timedOut": null,
+              "duration": 1514,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "//launch browser\nlet driver = await new Builder().forBrowser(\"chrome\").build();\n//navigate to application\nawait driver.get(\"https://lambdatest.github.io/sample-todo-app/\");\n//https://stg-com.lh.uk/\n//edit page\nawait driver\n  .findElement(By.id(\"sampletodotext\"))\n  .sendKeys(\"kljflkd\", Key.RETURN);\n//assert\nlet todoText = await driver\n  .findElement(By.xpath(\"//li[last()]\"))\n  .getText()\n  .then(function (value) {\n    return value;\n  });\n//chai assertion should\ntodoText.should.equal(\"kljfkd\");\n//close browser\nawait driver.quit();",
+              "err": {
+                "message": "AssertionError: expected 'kljflkd' to equal 'kljfkd'",
+                "estack": "AssertionError: expected 'kljflkd' to equal 'kljfkd'\n    at Context.<anonymous> (test.js:58:21)\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)",
+                "diff": "- kljflkd\n+ kljfkd\n"
+              },
+              "uuid": "f097f9ea-0fa0-49ce-8f17-3e17c8e3857d",
+              "parentUUID": null,
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "succesfully adds a todo application",
+              "fullTitle": "add todo tests succesfully adds a todo application",
+              "timedOut": null,
+              "duration": 2008,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "//launch browser\nlet driver = await new Builder().forBrowser(\"chrome\").build();\n//navigate to application\nawait driver.get(\"https://lambdatest.github.io/sample-todo-app/\");\n//https://stg-com.lh.uk/\n//edit page\nawait driver\n  .findElement(By.id(\"sampletodotext\"))\n  .sendKeys(\"shcdlkjsa\", Key.RETURN);\n//assert\nlet todoText = await driver\n  .findElement(By.xpath(\"//li[last()]\"))\n  .getText()\n  .then(function (value) {\n    return value;\n  });\n//chai assertion should\ntodoText.should.equal(\"shcdlkjsa\");\n//close browser\nawait driver.quit();",
+              "err": {},
+              "uuid": "3b023305-fb0c-40ab-aeea-373f3edff2e8",
               "parentUUID": null,
               "isHook": false,
               "skipped": false
@@ -55,12 +95,15 @@
           ],
           "suites": [],
           "passes": [
-            "5c582090-1584-420f-8420-f3e5e6c3ddfe"
+            "7c35a0d0-5a9b-49a3-b821-5a5f27973fa4",
+            "3b023305-fb0c-40ab-aeea-373f3edff2e8"
           ],
-          "failures": [],
+          "failures": [
+            "f097f9ea-0fa0-49ce-8f17-3e17c8e3857d"
+          ],
           "pending": [],
           "skipped": [],
-          "duration": 1505,
+          "duration": 5706,
           "root": false,
           "rootEmpty": false,
           "_timeout": null
