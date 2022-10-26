@@ -33,7 +33,7 @@ const GRID_HOST = 'hub.lambdatest.com/wd/hub';
 function searchTextOnGoogle() {
 
     // Setup Input capabilities
-    const capabilities = {
+    /*const capabilities = {
         platform: 'windows 10',
         browserName: 'chrome',
         version: 'latest',
@@ -45,6 +45,19 @@ function searchTextOnGoogle() {
         // video: true,
         name: 'Test 1', // name of the test
         build: 'NodeJS build' // name of the build
+    }*/
+
+    const capabilities = {
+        "browserName": "Chrome",
+        "browserVersion": "106.0",
+        "LT:Options": {
+           // "username": "adam.travers",
+           // "accessKey": "3QvTjiaQwdjoXJbYH7y6EospP3nrc1NQ3I24tlqqrhyU6yKxAa",
+            "platformName": "Windows 10",
+            "project": "Untitled",
+            "w3c": true,
+            "plugin": "node_js-node_js"
+        }
     }
 
     // URL: https://{username}:{accessToken}@beta-hub.lambdatest.com/wd/hub
@@ -55,6 +68,8 @@ function searchTextOnGoogle() {
         .usingServer(gridUrl)
         .withCapabilities(capabilities)
         .build();
+
+        
 
     // navigate to a url, click on the first and second list items and add a new one in the list.
     driver.get('https://lambdatest.github.io/sample-todo-app/').then(function() {
